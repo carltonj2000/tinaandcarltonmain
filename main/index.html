@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tina And Carlton</title>
+    <style>
+      html,
+      body {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+      .root {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background: url("picture.jpg");
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+      }
+      .icon {
+        width: 24px;
+        margin: 8px;
+        padding: 8px;
+        background-color: rgba(40, 100, 255, 0.5);
+        border-radius: 8px;
+      }
+      .menu_active {
+        display: none;
+      }
+      .menu_inactive {
+        display: block;
+      }
+      .nav {
+        width: 100%;
+        height: 100%;
+      }
+      .nav_inactive {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+      .menu {
+        position: absolute;
+        width: 100%;
+        padding-left: 16px;
+      }
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+      h1 {
+        font-size: 20px;
+        color: #fff;
+      }
+      .items {
+        display: flex;
+        color: #fff;
+      }
+      .item {
+        background-color: rgba(40, 100, 255, 0.5);
+        color: rgba(255, 255, 255, 0.5);
+        margin: 8px;
+        padding: 8px;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="root">
+      <div id="nav" class="nav">
+        <img src="bars-solid.svg" id="menuOpenIcon" class="icon" />
+        <img src="times-solid.svg" id="menuCloseIcon" class="icon" />
+        <div id="menu" class="menu">
+          <h1>Trips</h1>
+          <div class="items">
+            <div class="item">
+              <a href="http://tinaandcarlton.com/vietnam">Vietnam</a>
+            </div>
+            <div class="item">
+              New Orleans
+            </div>
+            <div class="item">
+              Florida
+            </div>
+          </div>
+          <h1>Wedding</h1>
+          <div class="items">
+            <div class="item">
+              <a href="http://tinaandcarlton.com/wedding">Wedding</a>
+            </div>
+            <div class="item">
+              <a href="http://tinaandcarlton.com/honeymoon">Honeymoon</a>
+            </div>
+            <div class="item">
+              <a href="http://tinaandcarlton.com/weddinginvite"
+                >Wedding Invitation</a
+              >
+            </div>
+          </div>
+          <h1>Dogs</h1>
+          <div class="items">
+            <div class="item">tbd</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let menuClosed = false;
+      const menuOpen = document.getElementById("menuOpenIcon");
+      menuOpen.onclick = menuAction;
+      const menuClose = document.getElementById("menuCloseIcon");
+      menuClose.onclick = menuAction;
+      const menu = document.getElementById("menu");
+      const nav = document.getElementById("nav");
+
+      function addClass(obj, cls) {
+        obj.className += " " + cls;
+      }
+
+      /* from
+       * https://stackoverflow.com/questions/2155737/remove-css-class-from-element-with-javascript-no-jquery
+       */
+      function removeClass(obj, cls) {
+        obj.className = obj.className.replace(
+          new RegExp("(?:^|\\s)" + cls + "(?:\\s|$)"),
+          " "
+        );
+      }
+
+      function menuAction() {
+        if (menuClosed) {
+          removeClass(menuOpen, "menu_inactive");
+          addClass(menuOpen, "menu_active");
+          removeClass(menuClose, "menu_active");
+          addClass(menuClose, "menu_inactive");
+          removeClass(menu, "menu_active");
+          addClass(menu, "menu_inactive");
+          addClass(nav, "nav_inactive");
+        } else {
+          removeClass(menuOpen, "menu_active");
+          addClass(menuOpen, "menu_inactive");
+          removeClass(menuClose, "menu_inactive");
+          addClass(menuClose, "menu_active");
+          removeClass(menu, "menu_inactive");
+          addClass(menu, "menu_active");
+          removeClass(nav, "nav_inactive");
+        }
+        menuClosed = !menuClosed;
+      }
+      menuAction();
+    </script>
+  </body>
+</html>
