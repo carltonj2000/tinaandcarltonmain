@@ -9,9 +9,11 @@ Steps below done in the DO `/mnt/volume_sfo2_02/cj/tinaandcarlton` directory.
 
 ### Digital Ocean Setup
 
-- `git clone https://github.com/carltonj2000/tinaandcarltonmain.git`;
+- `git clone https://github.com/carltonj2000/tinaandcarltonmain.git`
 - `ln -s tinaandcarltonmain\main main`
-- `ln -s <picture path> main\picture.[jpeg|jpg|png]`
+- `ln <picture path> main\picture.[jpeg|jpg|png]`
+
+Note the symbolic link for the picture failed hence the hard link.
 
 ### Digital Ocean Release Procedure
 
@@ -21,4 +23,9 @@ For every trip:
   `<trip directory>`.
 - About a month after trip edit `index.html` to redirect to the `main`
   directory.
-- `ln -s <trip picture> main\picture.[jpeg|jpg|png]`.
+- `ln <trip picture> main\picture.[jpeg|jpg|png]`.
+
+Note the symbolic link for the picture failed hence the hard link.
+
+For wedding used the following picture path.
+`ln /mnt/volume_sfo2_02/cj_pics/pics2018/wedding/weddingDayPhotographer/carltontina-photo-download-part1of1/highlights/resized/size_1620x1080/untitled\(160of170\).jpg picture.jpg`
