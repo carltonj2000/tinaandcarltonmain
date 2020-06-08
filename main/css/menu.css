@@ -1,0 +1,140 @@
+.menu-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.menu-wrap .toggler {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  padding: 1rem;
+  margin: 0.2rem;
+  background: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-wrap .hamburger > div {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.4s ease;
+}
+
+.menu-wrap .hamburger > div:before,
+.menu-wrap .hamburger > div:after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.4s ease;
+}
+
+.menu-wrap .hamburger > div:after {
+  top: 10px;
+}
+
+.menu-wrap .toggler:checked + .hamburger > div {
+  transform: rotate(45deg);
+}
+
+.menu-wrap .toggler:checked + .hamburger > div:before,
+.menu-wrap .toggler:checked + .hamburger > div:after {
+  transform: rotate(90deg);
+  top: 0;
+}
+
+.menu-wrap .toggler:checked:hover + .hamburger > div {
+  transform: rotate(-45deg);
+}
+
+.menu-wrap .menu {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.menu-wrap .menu > div {
+  background: var(--overlay-color);
+  border-radius: 50%;
+  width: 200vw;
+  height: 200vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  transition: all 0.4s ease;
+  flex: none;
+}
+
+.menu-wrap .menu > div > div {
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  padding: 0.5rem;
+}
+
+.menu a {
+  color: #ddd;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.menu h2 {
+  font-size: 1.8rem;
+  color: inherit;
+  padding: 1.2rem 0 1rem;
+}
+
+.menu-wrap .toggler:checked ~ .menu {
+  visibility: visible;
+}
+
+.menu-wrap .toggler:checked ~ .menu > div {
+  transform: scale(1);
+}
+
+.menu-wrap .toggler:checked ~ .menu > div > div {
+  opacity: 1;
+}
+
+.menu li li a {
+  background-color: var(--primary-color);
+  padding: 0.25rem 0.4rem;
+  margin: 0.25rem;
+  border-radius: 1rem;
+}

@@ -27,5 +27,13 @@ For every trip:
 
 Note the symbolic link for the picture failed hence the hard link.
 
-For wedding used the following picture path.
+For wedding used the following picture path (deprecated).
 `ln /mnt/volume_sfo2_02/cj_pics/pics2018/wedding/weddingDayPhotographer/carltontina-photo-download-part1of1/highlights/resized/size_1620x1080/untitled\(160of170\).jpg picture.jpg`
+
+## History
+
+### Hamburger Menu And Overlay With CSS on 2020-06-08
+
+The code is based on the
+[Pure CSS Hamburger Menu & Overlay](https://www.youtube.com/watch?v=DZg6UfS5zYg)
+video.
