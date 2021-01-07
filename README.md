@@ -9,11 +9,13 @@ Steps below done in the DO `/mnt/volume_sfo2_02/cj/tinaandcarlton` directory.
 
 ### Digital Ocean Setup
 
-- `git clone https://github.com/carltonj2000/tinaandcarltonmain.git`
-- `ln -s tinaandcarltonmain\main main`
-- `ln <picture path> main\picture.[jpeg|jpg|png]`
-
-Note the symbolic link for the picture failed hence the hard link.
+```bash
+git clone https://github.com/carltonj2000/tinaandcarltonmain.git
+# edit file and make changes for new additions.
+# Links below should be
+ln -s tinaandcarltonmain\main
+ln -s tinaandcarltonmain\index.html 
+```
 
 ### Digital Ocean Release Procedure
 
