@@ -57,10 +57,17 @@
     <header class="showcase">
       <div class="container showcase-inner">
         <h1>Tina And Carlton</h1>
-        <p>
-          A collection of our adventures.
-        </p>
+        <p>A collection of our adventures.</p>
       </div>
     </header>
+    <script>
+      const as = document.querySelectorAll("a");
+      for (i = 0; i < as.length; i++) {
+        const a = as[i];
+        const com = window.location.host.includes(".com");
+        if (!com) a.href = a.href.replace(".com", "");
+        console.log("href", a.href);
+      }
+    </script>
   </body>
 </html>
