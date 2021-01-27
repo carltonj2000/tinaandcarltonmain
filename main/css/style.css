@@ -30,7 +30,7 @@ body {
 
 .showcase:before {
   content: "";
-  background: url("../img/wedding.jpg") no-repeat center center/cover;
+  background: url("../img/picture.jpg") no-repeat center center/cover;
   position: absolute;
   top: 0;
   left: 0;

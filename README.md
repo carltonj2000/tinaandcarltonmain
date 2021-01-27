@@ -15,6 +15,7 @@ git clone https://github.com/carltonj2000/tinaandcarltonmain.git
 # Links below should be
 ln -s tinaandcarltonmain\main
 ln -s tinaandcarltonmain\index.html 
+cp <some_image.jpg> img/picture.jpg # for background image have been copying it
 ```
 
 ### Digital Ocean Release Procedure
